@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./main.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <title>Car Registration App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-container">
+        <div class="title"><h1>Car Registration</h1></div>
+        <div id="alert-reg"></div>
+        <form id="registerform">
+          <div class="formgroup">
+            <label>Full name*</label>
+            <input type="text" placeholder="Full name" id="username" />
+          </div>
+          <div class="formgroup">
+            <label>Driver Licence*</label>
+            <input type="text" placeholder="Driver licence" id="licence" />
+          </div>
+          <div class="formgroup">
+            <label>Car Model*</label>
+            <input type="text" placeholder="Car model" id="car-model" />
+          </div>
+          <div class="formgroup">
+            <label>Plate Number*</label>
+            <input type="text" placeholder="Plate number" id="plate-number" />
+          </div>
+          <div class="formsubmit">
+            <input type="submit" value="Submit" />
+          </div>
+        </form>
+      </div>
+      <div class="right-container">
+        <template id="item_template">
+          <div class="data-card">
+            <div>
+              <div class="heading">Name</div>
+              <div class="uname" id="data"></div>
+            </div>
+            <div>
+              <div class="heading">Driver Licence</div>
+              <div class="dlicence" id="data"></div>
+            </div>
+            <div>
+              <div class="heading">Car Model</div>
+              <div class="cmodel" id="data"></div>
+            </div>
+            <div>
+              <div class="heading">Plate number</div>
+              <div class="pnumber" id="data"></div>
+            </div>
+            <div>
+              <div class="heading" id="data">Actions</div>
+              <div class="actions">
+                <div class="actionWrapper">
+                  <button
+                    class="edit"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                    onclick="edit_data(this.id)"
+                  >
+                    Edit
+                  </button>
+                </div>
+                <div class="actionWrapper">
+                  <button
+                    type="button"
+                    class="delete"
+                    onclick="delete_item(this.id)"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </template>
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  Update registration details
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="formgroup">
+                  <label>Full name*</label>
+                  <input type="text" placeholder="Full name" id="musername" />
+                </div>
+                <div class="formgroup">
+                  <label>Driver Licence*</label>
+                  <input
+                    type="text"
+                    placeholder="Driver licence"
+                    id="mlicence"
+                  />
+                </div>
+                <div class="formgroup">
+                  <label>Car Model*</label>
+                  <input type="text" placeholder="Car model" id="mcar-model" />
+                </div>
+                <div class="formgroup">
+                  <label>Plate Number*</label>
+                  <input
+                    type="text"
+                    placeholder="Plate number"
+                    id="mplate-number"
+                  />
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="button" class="btn btn-primary" id="save">
+                  Save changes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
