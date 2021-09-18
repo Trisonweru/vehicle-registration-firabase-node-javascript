@@ -1,5 +1,5 @@
 # Vehicle Registration App
-This application allows govemnment to register vihicle in a centralized firebase database.
+This application allows govemnment to register vehicle in a centralized firebase database.
 
 ## Technologies
 - Javascript
